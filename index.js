@@ -1,7 +1,4 @@
-try { require('node-canvas-webgl') } catch (e) { throw Error('node-canvas-webgl is not installed, you can install it with `npm install PrismarineJS/node-canvas-webgl`') }
-
 const mineflayer = require('mineflayer')
-const mineflayerViewer = require('prismarine-viewer').headless
 const pathfinder = require('mineflayer-pathfinder').pathfinder
 const collectBlock = require('mineflayer-collectblock').plugin
 
@@ -27,11 +24,6 @@ bot.once('spawn', () => {
   console.log('Bot spawned!')
 })
 
-bot.once('spawn', () => {
-  // Record 200 frames, 512x512 pixels, and save them to output.mp4
-  mineflayerViewer(bot, { output: 'output.mp4', frames: 200, width: 512, height: 512 })
-  bot.setControlState('jump', true)
-})
 
 // Listen for when a player says "collect [something]" in chat
 bot.on('chat', (username, message) => {
